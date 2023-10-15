@@ -2,7 +2,7 @@ import './AudioPlayerUI.css'
 
 function AudioPlayerUI() {
     return (
-        <div>audioplayerui</div>
+        <div>audioplayerui lesz majds</div>
     );
 }
 
