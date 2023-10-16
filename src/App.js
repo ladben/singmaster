@@ -1,9 +1,9 @@
 import './App.css';
-import AudioPlayer from './components/audio/AudioPlayer/AudioPlayer';
+import Player from './components/Player/Player';
 
 function App() {
   return (
-    <AudioPlayer audioTitle="nem_tudja_senki" />
+    <Player />
   );
 }
 
