@@ -16,6 +16,12 @@
     width: calc(100% - 5px);
     height: 16px;
     background: linear-gradient(var(--clr-background) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.lyrics.scrolled::before {
+    opacity: 1;
 }
 
 .lyrics::after {
@@ -25,6 +31,12 @@
     width: calc(100% - 5px);
     height: 16px;
     background: linear-gradient(transparent 0%, var(--clr-background) 100%);
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+}
+
+.lyrics.scroll-end::after {
+    opacity: 0;
 }
 
 .lyrics ol {

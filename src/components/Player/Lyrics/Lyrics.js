@@ -1,10 +1,31 @@
+import { useRef } from 'react';
 import './Lyrics.css'
 
 function Lyrics() {
+    const scrollable = useRef(null);
+
+    const scrollHandler = (e) => {
+        const visibleHeight = e.target.offsetHeight;
+        const totalHeight = e.target.scrollHeight;
+        const scrolledHeight = e.target.scrollTop
+
+        if (visibleHeight + scrolledHeight >= totalHeight - 1) {
+            scrollable.current.classList.add('scroll-end');
+        } else {
+            scrollable.current.classList.remove('scroll-end');
+        }
+
+        if (scrolledHeight === 0) {
+            scrollable.current.classList.remove('scrolled');
+        } else {
+            scrollable.current.classList.add('scrolled');
+        }
+    }
+
     return (
         <div id='lyrics-container'>
-            <div className='lyrics'>
-                <ol>
+            <div className='lyrics' ref={scrollable}>
+                <ol onScroll={scrollHandler}>
                     <li>
                         <p>Nem tudja senki, hogy honnan jöttem</p>
                         <p>Hogy hányszor volt sötét az ég fölöttem</p>
