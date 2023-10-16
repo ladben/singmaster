@@ -8,7 +8,7 @@ function AudioPlayer (props) {
     const audioUrl = `./audios/${audioTitle}.mp3`;
     return (
         <div className='audio-player'>
-            <audio controls>
+            <audio>
                 <source src={audioUrl} type="audio/mpeg" />
             </audio>
             <AudioPlayerUI />

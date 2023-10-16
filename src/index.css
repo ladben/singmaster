@@ -7,7 +7,13 @@
 :root {
   --clr-background: #17110D;
   --clr-text: #fff;
-  --clr-accent: #00B3FF
+  --clr-accent: #00B3FF;
+  --clr-accent_light: #0DF;
+  --clr-accent_light-faded: #0AC;
+  --clr-accent_dark: #008CFF;
+  --clr-grey: #787878;
+  --gradient_angle: linear-gradient(224deg, var(--clr-accent_light) 9.67%, var(--clr-accent_dark) 87.26%);
+  --gradient_straight: linear-gradient(-80deg, var(--clr-accent_light) 0%, var(--clr-accent_dark) 90%);
 }
 
 body {
