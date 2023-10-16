@@ -1,0 +1,53 @@
+#lyrics-container {
+    width: 100%;
+    height: 100%;
+    padding: 32px 32px 210px;
+}
+
+.lyrics {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.lyrics::before {
+    position: absolute;
+    content: '';
+    width: calc(100% - 5px);
+    height: 16px;
+    background: linear-gradient(var(--clr-background) 0%, transparent 100%);
+}
+
+.lyrics::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: calc(100% - 5px);
+    height: 16px;
+    background: linear-gradient(transparent 0%, var(--clr-background) 100%);
+}
+
+.lyrics ol {
+    max-height: 100%;
+    overflow-y: auto;
+    padding-right: 5px;
+
+    --scrollbar-thumb: var(--clr-grey);
+}
+
+.lyrics ol::-webkit-scrollbar {
+    width: 2px;
+    border-radius: 2px;
+}
+
+.lyrics ol::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+}
+
+.lyrics li {
+    margin-bottom: 16px;
+}
+
+.lyrics li.active {
+    color: var(--clr-accent);
+}

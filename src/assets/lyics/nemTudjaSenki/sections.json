@@ -1,0 +1,40 @@
+{
+    "sections": [
+        {
+            "section": 0,
+            "title": "Kezdés"
+        },
+        {
+            "section": 1,
+            "title": "Refrén 1"
+        },
+        {
+            "section": 2,
+            "title": "Verze 1"
+        },
+        {
+            "section": 3,
+            "title": "Refrén 2"
+        },
+        {
+            "section": 4,
+            "title": "Verze 2"
+        },
+        {
+            "section": 5,
+            "title": "Refrén 3"
+        },
+        {
+            "section": 6,
+            "title": "Bridge"
+        },
+        {
+            "section": 7,
+            "title": "Refrén 4"
+        },
+        {
+            "section": 8,
+            "title": "Refrén 5"
+        }
+    ]
+}

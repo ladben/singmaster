@@ -1,0 +1,59 @@
+{
+    "lyrics": [
+        {
+            "timestamp": 0,
+            "section": 0,
+            "text": [
+                "Kezdés"
+            ]
+        },
+        {
+            "timestamp": 5.5,
+            "section": 1,
+            "text": [
+                "Nem tudja senki, hogy honnan jöttem",
+                "Hogy hányszor volt sötét az ég fölöttem"
+            ]
+        },
+        {
+            "timestamp": 14.7,
+            "section": 1,
+            "text": [
+                "Ködös a múltam, nem ismeri senki",
+                "Nincs otthonom, nincs hova visszamenni"
+            ]
+        },
+        {
+            "timestamp": 21.7,
+            "section": 1,
+            "text": [
+                "Sose voltam gazdag, de megvan minden",
+                "A legszebb pillanatok vannak ingyen"
+            ]
+        },
+        {
+            "timestamp": 28.8,
+            "section": 1,
+            "text": [
+                "Sok fénylő szempár ragyog a világon",
+                "Millió ember, én mindet imádom"
+            ]
+        },
+        {
+            "timestamp": 36.8,
+            "section": 2,
+            "text": [
+                "Rohanok, hogy a nevem egy olvadó jéghegybe véssem",
+                "De félek, nem érem el"
+            ]
+        },
+        {
+            "timestamp": 43.55,
+            "section": 2,
+            "text": [
+                "Életfogytig tart a vágy, de nincs aki féltsen",
+                "Mégsem érdekel"
+            ]
+        }
+    ]
+}
