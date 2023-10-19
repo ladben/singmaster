@@ -1,36 +1,52 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import './Lyrics.css'
 import lyricsFile from '../../../assets/lyics/nemTudjaSenki/lyrics.json'
 
 function Lyrics(props) {
     const {currLineTime} = props;
+    const timestampList = lyricsFile.lyrics.map(elem => elem.timestamp);
 
-    const [currActiveLine, setCurrActiveLine] = useState(lyricsFile.lyrics.map((elem, index) => {
-        return index === 0;
-    }));
+    const [activeTimestamp, setActiveTimestamp] = useState(0)
 
     const scrollable = useRef(null);
 
-    const progressActiveLine = () => {
-        const newCurrentActiveLine = [...currActiveLine];
-        const currentTrueIndex = newCurrentActiveLine.findIndex(element => element === true);
-        if (currentTrueIndex !== -1) {
-            const newCurrentTrueIndex = (currentTrueIndex + 1) % newCurrentActiveLine.length;
-
-            newCurrentActiveLine[newCurrentTrueIndex] = true;
-            newCurrentActiveLine[currentTrueIndex] = false;
+    const getMatchingTimestamp = useCallback((inputTimestamp, timestampArr = timestampList) => {
+        let left = 0;
+        let right = timestampArr.length - 1;
+      
+        while (left <= right) {
+          const mid = Math.floor((left + right) / 2);
+      
+          if (timestampArr[mid] <= inputTimestamp && (mid === timestampArr.length - 1 || timestampArr[mid + 1] > inputTimestamp)) {
+            return timestampArr[mid];
+          } else if (timestampArr[mid] <= inputTimestamp) {
+            left = mid + 1;
+          } else {
+            right = mid - 1;
+          }
         }
-        
-        setCurrActiveLine(newCurrentActiveLine);
-    }
-
+      
+        return null;
+    }, [timestampList]);
 
     useEffect(() => {
-        console.log(currLineTime);
-        if (currLineTime > 5) {
-            progressActiveLine();
+        const mathcingTimestamp = getMatchingTimestamp(currLineTime);
+        
+        if (mathcingTimestamp !== null && activeTimestamp !== mathcingTimestamp) {
+            const currActiveLine = document.querySelector(`li[data-timestamp="${activeTimestamp}"]`);
+            const nextActiveLine = document.querySelector(`li[data-timestamp="${mathcingTimestamp}"]`);
+            if (currActiveLine && nextActiveLine) {
+                currActiveLine.classList.remove('active');
+                nextActiveLine.classList.add('active');
+                setActiveTimestamp(mathcingTimestamp);
+                nextActiveLine.parentElement.scrollTo({
+                    top: nextActiveLine.offsetTop - 150,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }
         }
-    }, [currLineTime]);
+    }, [currLineTime, getMatchingTimestamp, activeTimestamp]);
 
 
     const scrollHandler = (e) => {
@@ -51,14 +67,28 @@ function Lyrics(props) {
         }
     }
 
+    const lineClickHandler = (e) => {
+        const lineTimeStamp = e.target.closest('li').dataset.timestamp;
+        const audio = document.querySelector('audio');
+        if (lineTimeStamp && audio) {
+            audio.currentTime = Number(lineTimeStamp);
+        }
+    }
+
     return (
         <div id='lyrics-container'>
             <div className='lyrics' ref={scrollable}>
                 <ol onScroll={scrollHandler}>
                     {
                         lyricsFile.lyrics.map((lyricsShard, shardIndex) => {
+                            const className = shardIndex === 0 ? 'active' : '';
                             return (
-                                <li className={currActiveLine[shardIndex] === true ? 'active' : ''} key={`listItem-${shardIndex}`} data-timestamp={lyricsShard.timestamp}>
+                                <li
+                                    className={className}
+                                    key={`listItem-${shardIndex}`}
+                                    data-timestamp={lyricsShard.timestamp}
+                                    onClick={lineClickHandler}
+                                >
                                     {
                                         lyricsShard.text.map((line, lineIndex) => {
                                             return (<p key={`line-${shardIndex}-${lineIndex}`}>{line}</p>)

@@ -12,12 +12,14 @@
 
 .lyrics::before {
     position: absolute;
+    top: -1px;
     content: '';
     width: calc(100% - 5px);
     height: 16px;
     background: linear-gradient(var(--clr-background) 0%, transparent 100%);
     opacity: 0;
     transition: opacity 250ms ease-in-out;
+    pointer-events: none;
 }
 
 .lyrics.scrolled::before {
@@ -26,13 +28,14 @@
 
 .lyrics::after {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     content: '';
     width: calc(100% - 5px);
     height: 16px;
     background: linear-gradient(transparent 0%, var(--clr-background) 100%);
     opacity: 1;
     transition: opacity 250ms ease-in-out;
+    pointer-events: none;
 }
 
 .lyrics.scroll-end::after {
@@ -58,6 +61,8 @@
 
 .lyrics li {
     margin-bottom: 16px;
+    cursor: pointer;
+    transition: color 250ms ease-in-out;
 }
 
 .lyrics li.active {
