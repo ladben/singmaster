@@ -8,12 +8,18 @@ import {ReactComponent as Forward} from '../../../assets/audioControlButtons/for
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
-function AudioPlayerUI() {
+function AudioPlayerUI(props) {
+    const {setCurrLineTime} = props;
+
     const customIcons = {
         play: <Play />,
         pause: <Pause />,
         rewind: <Backward />,
         forward: <Forward />,
+    }
+
+    const timeUpdateHandler = (e) => {
+        setCurrLineTime(e.srcElement.currentTime);
     }
 
     return (
@@ -24,6 +30,8 @@ function AudioPlayerUI() {
                 customVolumeControls={[]}
                 showDownloadProgress={false}
                 customIcons={customIcons}
+                listenInterval={100}
+                onListen={timeUpdateHandler}
             />
         </div>
     );

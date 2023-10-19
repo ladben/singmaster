@@ -1,8 +1,37 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Lyrics.css'
+import lyricsFile from '../../../assets/lyics/nemTudjaSenki/lyrics.json'
 
-function Lyrics() {
+function Lyrics(props) {
+    const {currLineTime} = props;
+
+    const [currActiveLine, setCurrActiveLine] = useState(lyricsFile.lyrics.map((elem, index) => {
+        return index === 0;
+    }));
+
     const scrollable = useRef(null);
+
+    const progressActiveLine = () => {
+        const newCurrentActiveLine = [...currActiveLine];
+        const currentTrueIndex = newCurrentActiveLine.findIndex(element => element === true);
+        if (currentTrueIndex !== -1) {
+            const newCurrentTrueIndex = (currentTrueIndex + 1) % newCurrentActiveLine.length;
+
+            newCurrentActiveLine[newCurrentTrueIndex] = true;
+            newCurrentActiveLine[currentTrueIndex] = false;
+        }
+        
+        setCurrActiveLine(newCurrentActiveLine);
+    }
+
+
+    useEffect(() => {
+        console.log(currLineTime);
+        if (currLineTime > 5) {
+            progressActiveLine();
+        }
+    }, [currLineTime]);
+
 
     const scrollHandler = (e) => {
         const visibleHeight = e.target.offsetHeight;
@@ -26,46 +55,19 @@ function Lyrics() {
         <div id='lyrics-container'>
             <div className='lyrics' ref={scrollable}>
                 <ol onScroll={scrollHandler}>
-                    <li>
-                        <p>Nem tudja senki, hogy honnan jöttem</p>
-                        <p>Hogy hányszor volt sötét az ég fölöttem</p>
-                    </li>
-                    <li>
-                        <p>Ködös a múltam, nem ismeri senki</p>
-                        <p>Nincs otthonom, nincs hova visszamenni</p>
-                    </li>
-                    <li>
-                        <p>Sose voltam gazdag, de megvan minden</p>
-                        <p>A legszebb pillanatok vannak ingyen</p>
-                    </li>
-                    <li>
-                        <p>Sok fénylő szempár ragyog a világon</p>
-                        <p>Millió ember, én mindet imádom</p>
-                    </li>
-                    <li>
-                        <p>Rohanok, hogy a nevem egy olvadó jéghegybe véssem</p>
-                        <p>De félek, nem érem el</p>
-                    </li>
-                    <li className='active'>
-                        <p>Életfogytig tart a vágy, de nincs aki féltsen</p>
-                        <p>Mégsem érdekel</p>
-                    </li>
-                    <li>
-                        <p>Azt mondják, hogy magasról lehet nagyot esni</p>
-                        <p>Én ha elestem sem álltam neki bűnbakot keresni</p>
-                    </li>
-                    <li>
-                        <p>Néztem a szürke eget, azon tűnődtem, hogy lehet</p>
-                        <p>Hogy ezer ágra süt a nap most is a felhők felett</p>
-                    </li>
-                    <li>
-                        <p>Ha nyeregbe kerültem, mindig jött a pofon</p>
-                        <p>Ez megtanított átlépni az üvegszilánkokon</p>
-                    </li>
-                    <li>
-                        <p>Lehet a zsebemben teltház vagy csak lyukas garasok</p>
-                        <p>Ez egy hullámvasút és én utas maradok</p>
-                    </li>
+                    {
+                        lyricsFile.lyrics.map((lyricsShard, shardIndex) => {
+                            return (
+                                <li className={currActiveLine[shardIndex] === true ? 'active' : ''} key={`listItem-${shardIndex}`} data-timestamp={lyricsShard.timestamp}>
+                                    {
+                                        lyricsShard.text.map((line, lineIndex) => {
+                                            return (<p key={`line-${shardIndex}-${lineIndex}`}>{line}</p>)
+                                        })
+                                    }
+                                </li>
+                            );
+                        })
+                    }
                 </ol>
             </div>
         </div>

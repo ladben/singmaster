@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus,
+button:active,
+button:hover {
+  outline: none;
 }
 
 :root {
