@@ -22,6 +22,8 @@ button:hover {
   --clr-grey: #787878;
   --gradient_angle: linear-gradient(224deg, var(--clr-accent_light) 9.67%, var(--clr-accent_dark) 87.26%);
   --gradient_straight: linear-gradient(-80deg, var(--clr-accent_light) 0%, var(--clr-accent_dark) 90%);
+
+  font-size: 16px;
 }
 
 body {
@@ -32,8 +34,12 @@ body {
   color: var(--clr-text);
 }
 
+li {
+  margin-bottom: 1rem;
+}
+
 p {
   font-weight: bold;
-  line-height: 24px;
-  font-size: 16px;
+  line-height: 1.5rem;
+  font-size: 1rem;
 }

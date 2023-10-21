@@ -1,7 +1,7 @@
 #lyrics-container {
     width: 100%;
     height: 100%;
-    padding: 32px 32px 210px;
+    padding: 32px 32px 190px;
 }
 
 .lyrics {
@@ -60,7 +60,6 @@
 }
 
 .lyrics li {
-    margin-bottom: 16px;
     cursor: pointer;
     transition: color 250ms ease-in-out;
 }

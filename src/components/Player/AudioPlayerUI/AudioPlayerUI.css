@@ -2,7 +2,7 @@
   position: absolute;
   width: 100%;
   padding: 35px 15px 15px;
-  bottom: 50px;
+  bottom: 10px;
 }
 
 #audio-player-ui .rhap_container {
@@ -12,7 +12,7 @@
 }
 
 #audio-player-ui .rhap_main {
-  gap: 30px;
+  gap: 40px;
 }
 
 #audio-player-ui .rhap_time {

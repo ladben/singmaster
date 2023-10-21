@@ -1,0 +1,44 @@
+.settings-container {
+    position: absolute;
+    right: 32px;
+    bottom: 43px;
+    width: 6px;
+    height: 24px;
+}
+
+.settings-btn {
+    cursor: pointer;
+}
+
+.settings-options {
+    background: var(--clr-text);
+    position: absolute;
+    bottom: 36px;
+    right: -18px;
+    padding: 16px;
+    border-radius: 5px;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 150ms ease-in-out;
+    width: 82px;
+    height: 82px;
+}
+
+.settings-container.open .settings-options {
+    transform: scaleY(1);
+}
+
+.fontsize-change_icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.fontsize-change_icon path {
+    fill: black;
+    transition: fill 150ms ease-in-out;
+}
+
+.fontsize-change_icon.active path {
+    fill: var(--clr-accent);
+}
