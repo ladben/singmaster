@@ -15,8 +15,8 @@ function Settings() {
 
     const fontsizeChangeClickHandler = (e) => {
         let fontsizeChangeIcon = e.target;
-        if (!e.target.classList.contains('fontsize-change_icon')) {
-            fontsizeChangeIcon = e.target.closest('.fontsize-change_icon');
+        if (!e.target.classList.contains('fontsize-change_container')) {
+            fontsizeChangeIcon = e.target.closest('.fontsize-change_container');
         }
 
         const root = document.querySelector(':root');
@@ -28,7 +28,7 @@ function Settings() {
                 fontsizeChangeIcon.classList.remove('active');
             }
 
-            if (rootFontSize === '16px') {
+            if (rootFontSize === '16px' || rootFontSize === '') {
                 root.style.setProperty('font-size', '20px');
                 fontsizeChangeIcon.classList.add('active');
             }
@@ -37,15 +37,23 @@ function Settings() {
 
     return (
         <div className='settings-container'>
-            <SettingsIcon
-                className='settings-btn'
+            <div
+                className='settings-btn_container'
                 onClick={settingsClickHandler}
-            />
-            <div className='settings-options'>
-                <FontsizeChangeIcon
-                    className='fontsize-change_icon'
-                    onClick={fontsizeChangeClickHandler}
+            >
+                <SettingsIcon
+                    className='settings-btn'
                 />
+            </div>
+            <div className='settings-options'>
+                <div
+                    className='fontsize-change_container'
+                    onClick={fontsizeChangeClickHandler}
+                >
+                    <FontsizeChangeIcon
+                        className='fontsize-change_icon'
+                    />
+                </div>
             </div>
         </div>
     );
