@@ -1,0 +1,27 @@
+.header {
+    position: absolute;
+    top: 32px;
+    height: 50px;
+    width: calc(100% - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 32px;
+}
+
+.settings {
+    position: absolute;
+    left: 0;
+}
+
+.music-info {
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.music-info .artist {
+    font-size: 10px;
+    font-weight: 500;
+}

@@ -2,7 +2,7 @@ import './Player.css'
 
 import AudioPlayerUI from './AudioPlayerUI/AudioPlayerUI';
 import Lyrics from './Lyrics/Lyrics';
-import Settings from './Settings/Settings';
+import Controls from './Controls/Controls';
 import { useRef, useState } from 'react';
 
 function Player () {
@@ -17,9 +17,9 @@ function Player () {
 
     return (
         <div className='audio-player' ref={appRef} style={{height: `${window.innerHeight}px`}}>
+            <Controls />
             <Lyrics currLineTime={currLineTime}/>
             <AudioPlayerUI setCurrLineTime={setCurrLineTime}/>
-            <Settings />
         </div>
     );
 }
