@@ -1,8 +1,15 @@
 import './Settings.css'
 
+import { FontSizeChanger } from './SettingOptions/SettingOptions';
+
 function Settings() {
     return (
-        <div>HELLO</div>
+        <div className='settings-container'>
+            <div className='settings-overlay'></div>
+            <div className='settings-panel'>
+                <FontSizeChanger />
+            </div>
+        </div>
     );
 };
 

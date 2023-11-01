@@ -1,0 +1,30 @@
+.input-toggle {
+    width: 45px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--clr-grey);
+    position: relative;
+    transition: background-color 250ms ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0;
+}
+
+.input-toggle::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translateX(-12px);
+    transition: transform 250ms ease-out;
+}
+
+.settings-option.active .input-toggle {
+    background-color: var(--clr-accent);
+}
+
+.settings-option.active .input-toggle::after {
+    transform: translateX(12px);
+}
