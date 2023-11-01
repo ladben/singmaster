@@ -31,7 +31,7 @@ function FontSizeChanger() {
             className='settings-option settings-option-fontsize'
         >
             <p>Nagyobb betűméret</p>
-            <ToggleInput />
+            <ToggleInput toggleHandler={fontsizeChangeClickHandler}/>
         </div>
     );
 };
