@@ -11,6 +11,7 @@ function Header() {
 
         if (settingsContainer) {
             settingsContainer.classList.toggle('hidden');
+            document.querySelector('html').classList.toggle('overscroll-none');
         }
     }
 
