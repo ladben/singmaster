@@ -6,16 +6,27 @@ import musicInfo from '../../../assets/lyics/nemTudjaSenki/header.json'
 import Settings from './Settings/Settings';
 
 function Header() {
+    const openCloseSettingsPanel = () => {
+        const settingsContainer = document.querySelector('.settings-container');
+
+        if (settingsContainer) {
+            settingsContainer.classList.toggle('hidden');
+        }
+    }
+
     return (
         <div className='controls'>
             <div className='header'>
-                <SettingsIcon className='open-settings'/>
+                <SettingsIcon
+                    className='open-settings'
+                    onClick={openCloseSettingsPanel}
+                />
                 <div className='music-info'>
                     <div className='title'>{musicInfo.title}</div>
                     <div className='artist'>{musicInfo.artist}</div>
                 </div>
             </div>
-            <Settings />
+            <Settings openCloseSettingsPanel={openCloseSettingsPanel}/>
         </div>
     );
 }
