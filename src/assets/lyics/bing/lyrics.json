@@ -1,0 +1,109 @@
+{
+  "lyrics": [
+      {
+          "timestamp": 0,
+          "section": 0,
+          "text": [
+              "Nyitány"
+          ]
+      },
+      {
+          "timestamp": 240,
+          "section": 1,
+          "text": [
+              "Az oviban az a jó"
+          ]
+      },
+      {
+          "timestamp": 416,
+          "section": 1,
+          "text": [
+              "Hopp itt van Hopiti"
+          ]
+      },
+      {
+        "timestamp": 634.5,
+        "section": 1,
+        "text": [
+          "Ugróiskola rajzolás"
+        ]
+      },
+      {
+          "timestamp": 729,
+          "section": 1,
+          "text": [
+              "Szálljunk magasra"
+          ]
+      },
+      {
+          "timestamp": 935,
+          "section": 1,
+          "text": [
+              "Ha volna egy űrhajóm"
+          ]
+      },
+      {
+          "timestamp": 1295,
+          "section": 2,
+          "text": [
+              "Együtt lehetünk"
+          ]
+      },
+      {
+          "timestamp": 1634,
+          "section": 2,
+          "text": [
+              "Sika mika"
+          ]
+      },
+      {
+          "timestamp": 1991.5,
+          "section": 2,
+          "text": [
+              "Limonádé"
+          ]
+      },
+      {
+        "timestamp": 2180.5,
+        "section": 2,
+        "text": [
+          "Építőkocka pakolás"
+        ]
+      },
+      {
+          "timestamp": 2367,
+          "section": 2,
+          "text": [
+              "Nem félünk a sötétben"
+          ]
+      },
+      {
+          "timestamp": 2897,
+          "section": 2,
+          "text": [
+              "Tündérország"
+          ]
+      },
+      {
+          "timestamp": 3379.5,
+          "section": 3,
+          "text": [
+              "Mindenhol jó, de legjobb otthon"
+          ]
+      },
+      {
+          "timestamp": 3550,
+          "section": 3,
+          "text": [
+              "Nagyon boldog szülinapot"
+          ]
+      },
+      {
+        "timestamp": 3682.5,
+        "section": 3,
+        "text": [
+          "Tapsrend"
+        ]
+      }
+  ]
+}

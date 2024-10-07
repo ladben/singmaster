@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import './Lyrics.css'
-import lyricsFile from '../../../assets/lyics/nemTudjaSenki/lyrics.json'
+//import lyricsFile from '../../../assets/lyics/nemTudjaSenki/lyrics.json'
+import lyricsFile from '../../../assets/lyics/bing/lyrics.json'
 
 function Lyrics(props) {
     const {currLineTime} = props;
