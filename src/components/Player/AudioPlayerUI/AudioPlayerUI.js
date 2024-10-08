@@ -21,7 +21,6 @@ function AudioPlayerUI(props) {
 
     const timeUpdateHandler = (e) => {
         setCurrLineTime(e.srcElement.currentTime);
-        console.log(e);
     }
 
     return (

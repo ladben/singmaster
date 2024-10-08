@@ -1,12 +1,12 @@
 diff --git a/node_modules/react-h5-audio-player/src/ProgressBar.tsx b/node_modules/react-h5-audio-player/src/ProgressBar.tsx
-index 6ae4b4a..4aa8e37 100644
+index 6ae4b4a..72eebd7 100644
 --- a/node_modules/react-h5-audio-player/src/ProgressBar.tsx
 +++ b/node_modules/react-h5-audio-player/src/ProgressBar.tsx
 @@ -227,6 +227,7 @@ class ProgressBar extends Component<ProgressBarProps, ProgressBarState> {
          onTouchStart={this.handleMouseDownOrTouchStartProgressBar}
          onContextMenu={this.handleContextMenu}
        >
-+        <div>HELOKA</div>
++        <div>HELOKA2</div>
          <div className={`rhap_progress-bar ${showDownloadProgress ? 'rhap_progress-bar-show-download' : ''}`}>
            <div className="rhap_progress-indicator" style={{ left: currentTimePos }} />
            {showFilledProgress && <div className="rhap_progress-filled" style={{ width: currentTimePos }} />}
