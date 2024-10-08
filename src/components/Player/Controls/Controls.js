@@ -2,7 +2,7 @@ import './Controls.css'
 
 import {ReactComponent as SettingsIcon} from '../../../assets/settings.svg';
 //import musicInfo from '../../../assets/lyics/nemTudjaSenki/header.json'
-import musicInfo from '../../../assets/lyics/bing/header.json'
+import musicInfo from '../../../assets/lyics/nyuszi/header.json'
 
 import Settings from './Settings/Settings';
 

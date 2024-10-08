@@ -4,6 +4,7 @@ import AudioPlayerUI from './AudioPlayerUI/AudioPlayerUI';
 import Lyrics from './Lyrics/Lyrics';
 import Controls from './Controls/Controls';
 import { useRef, useState } from 'react';
+import SeekTime from './SeekTime/SeekTime';
 
 function Player () {
     const [currLineTime, setCurrLineTime] = useState(0);
@@ -19,6 +20,7 @@ function Player () {
         <div className='audio-player' ref={appRef} style={{height: `${window.innerHeight}px`}}>
             <Controls />
             <Lyrics currLineTime={currLineTime}/>
+            <SeekTime />
             <AudioPlayerUI setCurrLineTime={setCurrLineTime}/>
         </div>
     );

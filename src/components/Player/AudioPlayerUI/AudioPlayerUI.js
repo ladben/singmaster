@@ -1,6 +1,6 @@
 import './AudioPlayerUI.css'
 //import audio from '../../../assets/audios/nem_tudja_senki.mp3';
-import audio from '../../../assets/audios/Bing.wav';
+import audio from '../../../assets/audios/hang.mp3';
 import {ReactComponent as Play} from '../../../assets/audioControlButtons/play.svg';
 import {ReactComponent as Pause} from '../../../assets/audioControlButtons/pause.svg'
 import {ReactComponent as Backward} from '../../../assets/audioControlButtons/backward.svg';
@@ -21,6 +21,7 @@ function AudioPlayerUI(props) {
 
     const timeUpdateHandler = (e) => {
         setCurrLineTime(e.srcElement.currentTime);
+        console.log(e);
     }
 
     return (
